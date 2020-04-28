@@ -1,20 +1,26 @@
+var seedrandom = require("seedrandom");
+
 module.exports = {
 	execute(a) {
-		var skill = Math.floor(Math.random()*101) + 1;
+    if (typeof a.message.mentions.users.first() !== "undefined") a.message.author = a.message.mentions.users.first();
+    var seed = new Date().toLocaleString("en-US", {timeZone: "Europe/Amsterdam"}).split(",")[0] + a.message.author.id;
+		var rng = seedrandom(seed);
+    var skill = Math.floor(rng()*101) + 1;
+    if (a.message.author.id == a.client.user.id) skill = 101;
 		var meter = [];
 		var textNo = 0;
 		if (skill != 101) {
-			for (i = 1; i < 6; i++) {
+			for (var i = 1; i < 6; i++) {
 				if ( i*16 < skill ) {
 					meter.push(":blue_circle:");
 					textNo++;
 				}
 			}
-			while (meter.length < 5) {
+      while (meter.length < 5) {
 				meter.push(":white_circle:");
 			}
 		} else {
-			if (Math.floor(Math.random() * 2) == 1) {
+			if (Math.floor(Math.random() * 2) == 1 || a.message.author.id == a.client.user.id) {
 				textNo = 6;
 				for (const a of new Array(5)) {
 					meter.push(":red_circle:");
@@ -36,6 +42,10 @@ module.exports = {
 			"Name: "+a.message.author.username+" \nSkill-Level: "+skill+"% - Außerordentlich guter Skill! \n",
 			"Name: "+a.message.author.username+" \nSkill-Level: ???% - Dein Skill übertrifft den messbaren Bereich! Unglaublich! \n"
 		];
+    if (a.message.author.id == a.client.user.id) {
+      a.message.channel.send("Name: "+a.message.author.username+" \nSkill-Level: ???% - Was hast du auch erwartet? \n"+meter.join(""));
+      return;
+    }
 		a.message.channel.send(texts[textNo]+meter.join(""));
 	},
 

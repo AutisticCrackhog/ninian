@@ -1,19 +1,25 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-const { Client, Attachment } = require('discord.js');
+const { Client, MessageAttachment } = require('discord.js');
 
 module.exports = {
 	execute(a) {
 		var contents = fs.readFileSync("./data/dances.json", (error) => {
-			if (!isEmpty(error)) console.error(error);
+			if (!!error) console.error(error);
 		});
 		var jsonContent = JSON.parse(contents);
 		var counter = jsonContent.dances + 1
-
-		const attachment = new Attachment("./data//dance.gif");
+    // ./data//dance.gif
+    // https://cdn.glitch.com/4f29c3dc-c285-4fd6-804a-641a956f47ac%2Frefresh.gif?v=1587510247123
+    var attachment = new MessageAttachment("https://cdn.glitch.com/4f29c3dc-c285-4fd6-804a-641a956f47ac%2Frefresh.gif");
+    attachment.name = "https://cdn.glitch.com/4f29c3dc-c285-4fd6-804a-641a956f47ac%2Frefresh.gif"
 		a.message.channel.send(":dancer: \n Ich habe insgesamt für "+counter+" Leute getanzt.", {
-			file: attachment
+			files: ["https://cdn.glitch.com/4f29c3dc-c285-4fd6-804a-641a956f47ac%2Frefresh.gif"]
 		});
+    
+    if (a.client.vc) {
+      a.client.play("https://cdn.glitch.com/4f29c3dc-c285-4fd6-804a-641a956f47ac%2FVOICE_Ninian_Oracle_of_Destiny_STATUS_2.wav?v=1587945341408");
+    }
 
 		var fileName = "./data/dances.json";
 		var file = require("../data/dances.json");

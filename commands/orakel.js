@@ -31,7 +31,7 @@ module.exports = {
 		const embed = new Discord.RichEmbed()
 	  .setColor(0xA1FFFF)
 	  .setThumbnail("https://imgur.com/r3Oq6Wu.png")
-	  .setFooter("Frage von "+a.message.author.username, a.message.author.avatarURL)
+	  .setFooter("Frage von "+a.message.author.username, a.message.author.avatarURL())
 	  .addField("Frage:", a.args.join(" "))
 	  .addField("Antwort:", answer)
 	 a.message.channel.send(embed);

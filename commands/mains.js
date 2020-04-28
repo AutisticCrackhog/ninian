@@ -12,7 +12,7 @@ module.exports = {
 				const embed = new Discord.RichEmbed()
 				 .setTitle("Mains von: "+mainsuser.username)
 	   	.setColor(0xA1FFFF)
-	   	.setThumbnail(mainsuser.avatarURL)
+	   	.setThumbnail(mainsuser.avatarURL())
 	   	.addField("Mains:", "--")
 	   	.addField("Secondaries:", "--")
 	   a.message.channel.send(embed);
@@ -26,7 +26,7 @@ module.exports = {
 			 const embed = new Discord.RichEmbed()
 				 .setTitle("Mains von: "+mainsuser.username)
 	   	.setColor(0xA1FFFF)
-	   	.setThumbnail(mainsuser.avatarURL)
+	   	.setThumbnail(mainsuser.avatarURL())
 	   	.addField("Mains:", "--")
 	   	.addField("Secondaries:", "--")
 	   a.message.channel.send(embed)
@@ -42,7 +42,7 @@ module.exports = {
 			const embed = new Discord.RichEmbed()
 		  .setTitle("Mains von: "+mainsuser.username)
 	  	.setColor(0xA1FFFF)
-	  	.setThumbnail(mainsuser.avatarURL)
+	  	.setThumbnail(mainsuser.avatarURL())
 	   .addField("Mains:", mains)
 	   .addField("Secondaries:", secondaries)
 	  a.message.channel.send(embed);
@@ -57,7 +57,7 @@ module.exports = {
 				const embed = new Discord.RichEmbed()
 				 .setTitle("Mains von: "+mainsuser.username)
 	   	.setColor(0xA1FFFF)
-	   	.setThumbnail(mainsuser.avatarURL)
+	   	.setThumbnail(mainsuser.avatarURL())
 	   	.addField("Mains:", "--")
 	   	.addField("Secondaries:", "--")
 	   a.message.channel.send(embed);
@@ -71,7 +71,7 @@ module.exports = {
 			 const embed = new Discord.RichEmbed()
 				 .setTitle("Mains von: "+mainsuser.username)
 	   	.setColor(0xA1FFFF)
-	   	.setThumbnail(mainsuser.avatarURL)
+	   	.setThumbnail(mainsuser.avatarURL())
 	   	.addField("Mains:", "--")
 	   	.addField("Secondaries:", "--")
 	   a.message.channel.send(embed)
@@ -87,7 +87,7 @@ module.exports = {
 			const embed = new Discord.RichEmbed()
 		  .setTitle("Mains von: "+mainsuser.username)
 	  	.setColor(0xA1FFFF)
-	  	.setThumbnail(mainsuser.avatarURL)
+	  	.setThumbnail(mainsuser.avatarURL())
 	   .addField("Mains:", mains)
 	   .addField("Secondaries:", secondaries)
 	  a.message.channel.send(embed);
@@ -325,6 +325,6 @@ module.exports = {
 		name: "mains",
 		description: "Zeigt die Mains und Secondaries von Nutzern an und legt eigene Mains fest",
 		usage: "[list / @Nutzer / Leer] / <add / remove> <main / secondary> <Charaktername aus -mains list> ",
-		alias: undefined
+		alias: ["m"]
 	}
 };

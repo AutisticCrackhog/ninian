@@ -8,7 +8,6 @@ module.exports = {
 
 	info: {
 		name: "newmain",
-		description: "Sucht dir einen neuen Main aus",
-		alias: undefined
+		description: "Sucht dir einen neuen Main aus"
 	}
 };

@@ -1,5 +1,9 @@
 module.exports = {
 	execute(a) {
+    if (!a.args.length) {
+      a.message.channel.send("Was soll ich sagen? \n`-say <Text>`");
+      return;
+    }
 		const sayMessage = a.args.join(" ");
     a.message.channel.send(sayMessage);
 	},
@@ -7,6 +11,7 @@ module.exports = {
 	info: {
 		name: "say",
 		description: "Lässt Ninian etwas sagen",
-		alias: undefined
+		alias: undefined,
+    usage: "<Text>"
 	}
 };

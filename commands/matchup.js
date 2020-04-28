@@ -7,7 +7,7 @@ module.exports = {
 	execute(a) {
 		var url = 'https://www.eventhubs.com/tiers/ssbu/character/';
 		var characters = [
-  			"Mario","Donkey Kong","Link","Samus","Dark Samus","Samus / Dark Samus","Yoshi","Kirby","Fox","Pikachu","Luigi","Ness","Captain Falcon","Jigglypuff","Peach","Daisy","Peach / Daisy","Bowser","Ice Climbers","Sheik","Zelda","Dr. Mario","Pichu","Falco","Marth","Lucina","Young Link","Ganondorf","Mewtwo","Roy","Chrom","Mr. Game & Watch","Meta Knight","Pit","Dark Pit","Pit / Dark Pit","Zero Suit Samus","Wario","Snake","Ike","Pokemon Trainer","Diddy Kong","Lucas","Sonic","King Dedede","Olimar","Lucario","R.O.B","Toon Link","Wolf","Villager","Mega Man","Wii Fit Trainer","Rosalina","Little Mac","Greninja","Mii Brawler","Mii Swordfighter","Mii Gunner","Palutena","Pac-Man","Robin","Shulk","Bowser Jr.","Duck Hunt","Ryu","Ken","Cloud","Corrin","Bayonetta","Inkling","Ridley","Simon","Richter","Simon / Richter","King K. Rool","Isabelle","Incineroar","Piranha Plant","Joker","Hero"
+  			"Mario","Donkey Kong","Link","Samus","Dark Samus","Samus / Dark Samus","Yoshi","Kirby","Fox","Pikachu","Luigi","Ness","Captain Falcon","Jigglypuff","Peach","Daisy","Peach / Daisy","Bowser","Ice Climbers","Sheik","Zelda","Dr. Mario","Pichu","Falco","Marth","Lucina","Young Link","Ganondorf","Mewtwo","Roy","Chrom","Mr. Game & Watch","Meta Knight","Pit","Dark Pit","Pit / Dark Pit","Zero Suit Samus","Wario","Snake","Ike","Pokemon Trainer","Diddy Kong","Lucas","Sonic","King Dedede","Olimar","Lucario","R.O.B","Toon Link","Wolf","Villager","Mega Man","Wii Fit Trainer","Rosalina","Little Mac","Greninja","Mii Brawler","Mii Swordfighter","Mii Gunner","Palutena","Pac-Man","Robin","Shulk","Bowser Jr.","Duck Hunt","Ryu","Ken","Cloud","Corrin","Bayonetta","Inkling","Ridley","Simon","Richter","Simon / Richter","King K. Rool","Isabelle","Incineroar","Piranha Plant","Joker","Hero", "Banjo & Kazooie", "Terry", "Byleth"
   		];
 		const autocorrect = require('autocorrect')({words: characters})
 
@@ -72,6 +72,6 @@ module.exports = {
 		name: "matchup",
 		description: "Zum Prüfen von Matchups zwischen zwei Charakteren",
 		usage: "<Name1> + <Name2>",
-		alias: undefined
+		alias: ["mu"]
 	}
 };

@@ -99,8 +99,12 @@
     "Byleth"
   ],
   "247271545234259968": {
-    "mains": [],
-    "secondaries": []
+    "mains": [
+      "Jigglypuff"
+    ],
+    "secondaries": [
+      "Roy"
+    ]
   },
   "259718529790640128": {
     "mains": [
@@ -183,10 +187,12 @@
   },
   "232593220427710464": {
     "mains": [
-      "Snake"
+      "Robin",
+      "Byleth"
     ],
     "secondaries": [
-      "Inkling"
+      "Snake",
+      "Incineroar"
     ]
   },
   "269963628659212298": {
@@ -202,7 +208,8 @@
       "Zelda"
     ],
     "secondaries": [
-      "Zufall"
+      "Zufall",
+      "Corrin"
     ]
   },
   "398202184166277130": {
