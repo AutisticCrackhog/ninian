@@ -8,6 +8,7 @@ const seedrandom = require("seedrandom");
 module.exports = {
 	execute(a) {
     var waifus = JSON.parse(fs.readFileSync("./data/waifus.json"))
+    // a.message.channel.send("Ich versuchs"); return;
     
     if (typeof a.args[0] !== "undefined") {
       if (a.args[0] == "favs") {
@@ -96,23 +97,22 @@ module.exports = {
           msg.react(":bridal_ninian:696135390674944010");
           
           const filter = (reaction, user) => {
-            console.log([reaction.emoji.name === 'bridal_ninian', user.id])
-            return reaction.emoji.name === 'bridal_ninian' && user.id === a.message.author.id;
+            return reaction.emoji.name === 'bridal_ninian' && !user.bot;
           };
 
-          const collector = msg.createReactionCollector(filter, { max: 1, time: 15000 });
+          const collector = msg.createReactionCollector(filter, { time: 25000 });
           
-          collector.on('collect', (reaction, reactionCollector) => {
-            if (waifus[a.message.author.id]) {
-              if (waifus[a.message.author.id].length < 7) {
-                waifus[a.message.author.id].push(name);
-                a.message.channel.send(name+" wurde zu deinen Favoriten hinzugefügt! ("+waifus[a.message.author.id].length+"/7)");
+          collector.on('collect', (reaction, user) => {
+            if (waifus[user.id]) {
+              if (waifus[user.id].length < 7) {
+                waifus[user.id].push(name);
+                a.message.channel.send(name+" wurde zu deinen Favoriten hinzugefügt! ("+waifus[user.id].length+"/7)");
               } else {
                 a.message.channel.send("🚫 "+name+" konnte nicht hinzugefügt werden. (7/7)")
               }
             } else {
-              waifus[a.message.author.id] = [];
-              waifus[a.message.author.id].push(name);
+              waifus[user.id] = [];
+              waifus[user.id].push(name);
               a.message.channel.send(name+" wurde zu deinen Favoriten hinzugefügt! (1/7)");
             }
             fs.writeFileSync('./data/waifus.json', JSON.stringify(waifus, null, 2));

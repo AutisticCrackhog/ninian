@@ -1,8 +1,9 @@
 const Discord = require("discord.js");
 
 module.exports = {
-	execute(a) {
-    console.log(a.client.connected);
+	async execute(a) {
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    a.message.channel.send("2s");
 	},
 
 	info: {

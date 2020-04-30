@@ -155,9 +155,12 @@ client.on('message', message => {
 	  else if (client.devcommands.has(command) && message.author == dev) {
 	    try {
 	      var value = client.devcommands.get(command).execute({message, args, client});
+        console.log(value);
 	      if (typeof value !== "undefined") {
-	        client.commands = value[1];
-	        client.devcommands = value[0];
+          if (value.length == 2) {
+            client.commands = value[1];
+            client.devcommands = value[0];
+          }
 	      }
 	    } catch (error) {
 	      console.error(error);
