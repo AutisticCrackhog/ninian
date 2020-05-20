@@ -9,7 +9,7 @@ module.exports = {
 
 		if (typeof(a.args[0]) === "undefined") {
 			if (typeof(file[mainsuser.id]) == "undefined") {
-				const embed = new Discord.RichEmbed()
+				const embed = new Discord.MessageEmbed()
 				 .setTitle("Mains von: "+mainsuser.username)
 	   	.setColor(0xA1FFFF)
 	   	.setThumbnail(mainsuser.avatarURL())
@@ -23,7 +23,7 @@ module.exports = {
 			var secondaries = file[mainsuser.id].secondaries;
 
 			if (mains.length == 0 && secondaries.length == 0) {
-			 const embed = new Discord.RichEmbed()
+			 const embed = new Discord.MessageEmbed()
 				 .setTitle("Mains von: "+mainsuser.username)
 	   	.setColor(0xA1FFFF)
 	   	.setThumbnail(mainsuser.avatarURL())
@@ -39,7 +39,7 @@ module.exports = {
 				secondaries = "--";
 			}
 
-			const embed = new Discord.RichEmbed()
+			const embed = new Discord.MessageEmbed()
 		  .setTitle("Mains von: "+mainsuser.username)
 	  	.setColor(0xA1FFFF)
 	  	.setThumbnail(mainsuser.avatarURL())
@@ -54,7 +54,7 @@ module.exports = {
 
 
 			if (typeof(file[mainsuser.id]) === "undefined") {
-				const embed = new Discord.RichEmbed()
+				const embed = new Discord.MessageEmbed()
 				 .setTitle("Mains von: "+mainsuser.username)
 	   	.setColor(0xA1FFFF)
 	   	.setThumbnail(mainsuser.avatarURL())
@@ -68,7 +68,7 @@ module.exports = {
 			var secondaries = file[mainsuser.id].secondaries;
 
 			if (mains.length == 0 && secondaries.length == 0) {
-			 const embed = new Discord.RichEmbed()
+			 const embed = new Discord.MessageEmbed()
 				 .setTitle("Mains von: "+mainsuser.username)
 	   	.setColor(0xA1FFFF)
 	   	.setThumbnail(mainsuser.avatarURL())
@@ -84,7 +84,7 @@ module.exports = {
 				secondaries = "--";
 			}
 
-			const embed = new Discord.RichEmbed()
+			const embed = new Discord.MessageEmbed()
 		  .setTitle("Mains von: "+mainsuser.username)
 	  	.setColor(0xA1FFFF)
 	  	.setThumbnail(mainsuser.avatarURL())

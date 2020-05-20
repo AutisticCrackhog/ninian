@@ -5,14 +5,14 @@ module.exports = {
 		while (n <= 48) {
 			if (n < 10) {
 				kneemotes.push(
-					a.client.emojis.find(emoji => emoji.name == n+"_").toString()
+					a.client.emojis.cache.find(emoji => emoji.name == n+"_").toString()
 				);
 				if (lineb(n)) {
 					kneemotes.push("\n");
 				}
 			} else {
 				kneemotes.push(
-					a.client.emojis.find(emoji => emoji.name == n).toString()
+					a.client.emojis.cache.find(emoji => emoji.name == n).toString()
 				);
 				if (lineb(n)) {
 					kneemotes.push("\n");

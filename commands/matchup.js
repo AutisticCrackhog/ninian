@@ -51,7 +51,7 @@ module.exports = {
 						var color = "ee6666";
 						var title = "Unvorteilhaftes MU";
 					}
-					const embed = new Discord.RichEmbed()
+					const embed = new Discord.MessageEmbed()
 						.setTitle(title)
 						.setColor(color)
 						.setAuthor("Eventhubs.com", "https://media.eventhubs.com/static/images/eventhubslogo1.png", "https://www.eventhubs.com/tiers/ssbu/")

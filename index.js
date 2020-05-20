@@ -2,13 +2,14 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require("./config.json");
 
-// NPM
+// NPM Packages
 const fs = require("fs");
 const { Client, Attachment } = require('discord.js');
 const request = require('request');
 const rp = require('request-promise');
 const cheerio = require('cheerio');
 
+// Express Zeugs und Website
 const http = require('http');
 const express = require('express');
 const app = express();
@@ -82,7 +83,7 @@ for (const file of devCommandFiles) {
 	client.devcommands.set(command.info.name, command);
 }
 
-// Variables
+// Variablen
 var dev;
 
 client.once('ready', () => {
@@ -104,7 +105,7 @@ client.once('ready', () => {
   };
 });
 
-// Log server names and ID
+// Gejointe Server loggen
 client.on("guildCreate", guild => {
   var contents = fs.readFileSync("./data/guilds.json", (error) => {
     if (!!error) console.error(error);
@@ -133,7 +134,20 @@ client.on('message', message => {
   if (message.content.indexOf(config.prefix) === 0) {
 	  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 	  var command = args.shift().toLowerCase();
-
+    
+    var toggle = JSON.parse(fs.readFileSync("./data/toggle.json"));
+    
+    if (toggle[message.guild.id]) {
+      if (toggle[message.guild.id].indexOf(command) > -1) {
+        return;
+      }
+    }
+    
+    // Delay von 20ms damit der Bot nie zuerst schreibt
+    (async () => {
+      await new Promise(resolve => setTimeout(resolve, 20))
+    });
+  
 		// Normal Commands
     if (client.cmdAlias.has(command)) {
       command = client.cmdAlias.get(command);
@@ -155,7 +169,6 @@ client.on('message', message => {
 	  else if (client.devcommands.has(command) && message.author == dev) {
 	    try {
 	      var value = client.devcommands.get(command).execute({message, args, client});
-        console.log(value);
 	      if (typeof value !== "undefined") {
           if (value.length == 2) {
             client.commands = value[1];
@@ -168,7 +181,7 @@ client.on('message', message => {
 	    }
 	  }
 	} else {
-		// Not Commands
+		// Keine Commands
 		if (typeof(message.mentions.users.first()) !== "undefined") {
 			const ninian = "<:ninian:695011975390036079>";
 			if (message.mentions.users.first().id == "513436746080452641") {
@@ -178,7 +191,7 @@ client.on('message', message => {
 	}
 });
 
-// Update voice channel
+// Voice Channel Event
 client.on("voiceStateUpdate", (oldvs, newvs) => {
   if (client.vc) {
     if (client.vc.id == oldvs.channelID) {
@@ -196,5 +209,5 @@ client.on("error", (e) => {
 	console.error(e);
 });
 
-// login
+// Login
 client.login(process.env.TOKEN);

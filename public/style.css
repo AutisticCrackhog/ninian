@@ -217,3 +217,8 @@ p {
   margin-right: auto;
   margin-left: auto;
 }
+
+.twitter-follow-button {
+  margin-right: 2em;
+  margin-top: 1em;
+}

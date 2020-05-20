@@ -27,7 +27,7 @@ module.exports = {
       "Antenne,1",
       "Geige,1",
       "Hose,1",
-      "Kokusnuss,1",
+      "Kokosnuss,1",
       "Wunder,2",
       "Clown,0",
       "Kaktus,0",
@@ -40,7 +40,23 @@ module.exports = {
       "Giraffe,1",
       "Katastrophe,1",
       "Pflanze,1",
-      "Matrose,0"
+      "Matrose,0",
+      "Eskimo,0",
+      "Zahl,1",
+      "Walzer,0",
+      "Schraube,1",
+      "Vogel,0",
+      "Asteroid,0",
+      "Tropfen,0",
+      "Serviette,1",
+      "Asiate,0",
+      "Spiel,2",
+      "Mitarbeiter,0",
+      "Luftakrobat,0",
+      "Stern,0",
+      "Scheibe,1",
+      "Magnet,0",
+      "Bruder,0"
     ];
     var adj = [
       "klug",
@@ -60,7 +76,11 @@ module.exports = {
       "seltsam",
       "cool",
       "hell",
-      "richtig"
+      "richtig",
+      "leistungsfähig",
+      "radikal",
+      "hoh",
+      "salzig"
     ];
     
     var n = nomen[Math.floor(rng()*nomen.length)];

@@ -68,7 +68,7 @@ module.exports = {
 				console.log(i);
 
 				var gif = "https://ultimateframedata.com/"+$($(".movecontainer").get(index)).children(".hitbox").children().attr("data-featherlight");
-				const embed = new Discord.RichEmbed()
+				const embed = new Discord.MessageEmbed()
 				.setColor(0xA1FFFF)
 				.setTitle(name + " " + argmove)
 				.setImage(gif)
@@ -94,7 +94,7 @@ module.exports = {
 
 							if (!data[0].startsWith("*")) classes.shift();
             
-							const embed2 = new Discord.RichEmbed()
+							const embed2 = new Discord.MessageEmbed()
 							.setColor(0xA1FFFF)
 							.setTitle(name + " " + argmove)
               .setURL(url)

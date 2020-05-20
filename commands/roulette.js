@@ -28,21 +28,31 @@ module.exports = {
           a.message.channel.send("Du willst das Spiel alleine spielen? Nun gut...")
         }
         var turn = 0;
+        var round = 0;
+        var bullets = 0;
         players.sort(() => Math.random() - 0.5);
         a.message.channel.send("Das Spiel beginnt");
         
         var running = true;
         var game = () => {
+          if (round % 2 == 0 && bullets < 5) {
+            bullets++;
+            if (bullets != 1) a.message.channel.send("Eine weitere Patrone wurde hinzugefügt");
+          }
           a.message.channel.send(players[turn].username+" ist an der Reihe. Er dreht an der Trommel und...")
           .then(async msg2 => {
             var check = () => {
-              if (Math.floor(Math.random()*6)+1 == 6) {
+              if (Math.floor(Math.random()*6)+1 <= bullets) {
                 running = false;
                 msg2.edit("💀 "+players[turn].username+" ist **gestorben**, und hat damit das Spiel verloren!");
                 return;
               } else {
                 msg2.edit(players[turn].username+" hat **überlebt**");
                 turn == players.length -1 ? turn = 0 : turn++;
+                if (turn == players.length - 1) {
+                  turn = 0;
+                  round++;
+                }
               }
             }
             setTimeout(check, time);
