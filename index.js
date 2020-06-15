@@ -83,26 +83,18 @@ for (const file of devCommandFiles) {
 	client.devcommands.set(command.info.name, command);
 }
 
-// Variablen
+// Globale Variablen
 var dev;
 
 client.once('ready', () => {
   dev = client.users.cache.get("247271545234259968");
 	console.log('Ninian ist bereit!');
 	console.log(`${client.commands.size} Commands und ${client.devcommands.size} Dev-Commands geladen.`);
-  client.user.setActivity("Tanzshows", {
+  client.user.setActivity("-help", {
 		url: "https://twitch.tv/ninianbot",
 		type: "STREAMING"
 	});
-  client.connected = false;
-  client.play = (url) => {
-    if (client.vc && client.connected) {
-      client.vc.join()
-      .then(connection => {
-        connection.play(url);
-      })
-    }
-  };
+  client.play = require("./play.js");
 });
 
 // Gejointe Server loggen
@@ -144,11 +136,12 @@ client.on('message', message => {
     }
     
     // Delay von 20ms damit der Bot nie zuerst schreibt
+    // Sowie ich Async verstanden habe, sollte das sogar nichts bewirken, aber mal sehen
     (async () => {
       await new Promise(resolve => setTimeout(resolve, 20))
-    });
+    })();
   
-		// Normal Commands
+		// Normale Commands
     if (client.cmdAlias.has(command)) {
       command = client.cmdAlias.get(command);
     }
@@ -156,6 +149,7 @@ client.on('message', message => {
 	  if (client.commands.has(command)) {
 	    try {
 	      var value = client.commands.get(command).execute({message, args, client});
+        client.play(message.member, command);
 	      if (typeof value !== "undefined") {
 
 	      }
@@ -193,15 +187,11 @@ client.on('message', message => {
 
 // Voice Channel Event
 client.on("voiceStateUpdate", (oldvs, newvs) => {
-  if (client.vc) {
-    if (client.vc.id == oldvs.channelID) {
-      if (client.vc.members.size == 1) {
-        client.connected = false;
-        client.vc.leave();
-        client.vc = undefined;
-      }
+  client.voice.connections.forEach((value, key) => {
+    if (value.channel.members.size === 1 && value.channel.members.first().user.id === client.user.id) {
+      value.channel.leave();
     }
-  }
+  });
 })
 
 // Error Handler

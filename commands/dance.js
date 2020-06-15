@@ -16,10 +16,6 @@ module.exports = {
 		a.message.channel.send(":dancer: \n Ich habe insgesamt für "+counter+" Leute getanzt.", {
 			files: ["https://cdn.glitch.com/4f29c3dc-c285-4fd6-804a-641a956f47ac%2Frefresh.gif"]
 		});
-    
-    if (a.client.vc) {
-      a.client.play("https://cdn.glitch.com/4f29c3dc-c285-4fd6-804a-641a956f47ac%2FVOICE_Ninian_Oracle_of_Destiny_STATUS_2.wav?v=1587945341408");
-    }
 
 		var fileName = "./data/dances.json";
 		var file = require("../data/dances.json");

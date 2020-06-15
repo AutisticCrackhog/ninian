@@ -19,9 +19,6 @@ module.exports = {
 			.then(msg => {
 				msg.react("📬");
 			}).catch(error => console.error(error));
-    if (a.client.vc && a.client.vc.members.find(m => m.id === a.message.author.id)) {
-      a.client.play("https://cdn.glitch.com/4f29c3dc-c285-4fd6-804a-641a956f47ac%2FVOICE_Ninian_Oracle_of_Destiny_STATUS_3.wav?v=1587945569548");
-    }
 	},
 
 	info: {

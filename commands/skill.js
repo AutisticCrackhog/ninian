@@ -46,6 +46,10 @@ module.exports = {
       a.message.channel.send("Name: "+a.message.author.username+" \nSkill-Level: ???% - Was hast du auch erwartet? \n"+meter.join(""));
       return;
     }
+    if (skill == 69) {
+      a.message.channel.send("Name: "+a.message.author.username+" \nSkill-Level: 69% - :fire::joy::ok_hand::100: \n"+meter.join(""));
+      return;
+    }
 		a.message.channel.send(texts[textNo]+meter.join(""));
 	},
 

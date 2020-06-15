@@ -17,9 +17,6 @@ module.exports = {
 				"color": 10616831
 			}
 		});
-    if (a.client.vc) {
-      a.client.play("https://cdn.glitch.com/4f29c3dc-c285-4fd6-804a-641a956f47ac%2FVOICE_Ninian_Oracle_of_Destiny_SKILL_1.wav?v=1587945482430");
-    }
 	},
 
 	info: {
