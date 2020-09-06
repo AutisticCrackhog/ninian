@@ -25,6 +25,7 @@ module.exports = {
 	info: {
 		name: "join",
 		description: "Führe Unterhaltungen mit Ninian",
-		alias: undefined
+		alias: undefined,
+    category: "ninian"
 	}
 };

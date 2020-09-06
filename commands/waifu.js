@@ -173,14 +173,14 @@ module.exports = {
             if (waifus[user.id]) {
               if (waifus[user.id].length < 15) {
                 waifus[user.id].push(name);
-                a.message.channel.send(name+" wurde zu den Favoriten von "+user.username+" hinzugefügt! ("+waifus[user.id].length+"/15)");
+                a.message.channel.send("💙 "+name+" wurde zu den Favoriten von "+user.username+" hinzugefügt! ("+waifus[user.id].length+"/15)");
               } else {
                 a.message.channel.send("🚫 "+name+" konnte nicht hinzugefügt werden. (15/15)")
               }
             } else {
               waifus[user.id] = [];
               waifus[user.id].push(name);
-              a.message.channel.send(name+" wurde zu den Favoriten von "+user.username+" hinzugefügt! (1/15)");
+              a.message.channel.send("💙 "+name+" wurde zu den Favoriten von "+user.username+" hinzugefügt! (1/15)");
             }
             fs.writeFileSync('./data/waifus.json', JSON.stringify(waifus, null, 2));
           });
@@ -196,6 +196,7 @@ module.exports = {
 		name: "waifu",
 		description: "Such dir eine neue Waifu aus",
     usage: "[favs / remove] [@Nutzer / Waifu]",
-		alias: ["w"]
+		alias: ["w"],
+    category: "divers"
   }
 };

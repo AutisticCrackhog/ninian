@@ -190,7 +190,7 @@ module.exports = {
         msg.react("🟢").then(() => msg.react("✋"));
         
         const filter = (reaction, user) => {
-          return ( reaction.emoji.name === "🟢" || reaction.emoji.name === "✋" ) && !user.bot;
+          return ( reaction.emoji.name === "🟢" || reaction.emoji.name === "✋" ) &&  user.id === a.message.author.id && !user.bot;
         };
         
         repeat();
@@ -240,6 +240,7 @@ module.exports = {
 	info: {
 		name: "blackjack",
 		description: "Zum spielen von Black Jack gegen Ninian",
-		alias: ["bj"]
+		alias: ["bj"],
+    category: "spiele"
 	}
 };

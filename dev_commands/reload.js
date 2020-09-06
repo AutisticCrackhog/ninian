@@ -20,7 +20,14 @@ module.exports = {
 			const command = require(`../dev_commands/${file}`);
 			a.client.devcommands.set(command.info.name, command);
 		}
+		
+		for (const u of Object.keys(util)) {
+		  delete require.cache[require.resolve("../util/"+u+".js")];
+		  util[u] = require("../util/"+u+".js");
+		}
+		
 		console.log(`${a.client.commands.size} Commands und ${a.client.devcommands.size} Dev-Commands geladen.`);
+    a.message.react("♻️");
 		return [a.client.devcommands, a.client.commands];
 	},
 

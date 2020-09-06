@@ -124,6 +124,7 @@ module.exports = {
 	info: {
 		name: "me",
 		description: "Zeigt dir, was dir heute am ehesten ähnelt",
-		alias: undefined
+		alias: undefined,
+    category: "daily"
 	}
 };

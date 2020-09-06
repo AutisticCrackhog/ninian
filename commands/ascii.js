@@ -23,7 +23,8 @@ module.exports = {
 		name: "ascii",
 		description: "Wandelt Text in Ascii-Art um",
 		alias: undefined,
-    usage: "<Text>"
+    usage: "<Text>",
+    category: "text"
 	}
 };
 

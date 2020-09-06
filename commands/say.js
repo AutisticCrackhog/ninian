@@ -12,6 +12,7 @@ module.exports = {
 		name: "say",
 		description: "Lässt Ninian etwas sagen",
 		alias: undefined,
-    usage: "<Text>"
+    usage: "<Text>",
+    category: "text"
 	}
 };

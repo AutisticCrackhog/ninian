@@ -6,18 +6,22 @@ const cheerio = require('cheerio');
 module.exports = {
 	execute(a) {
 		if (!a.args[0]) {
-			a.message.channel.send("Es wurde kein Charakter angegeben\n`-frames <Charakter> <Move>`");
+			a.message.channel.send("Es wurde kein Charakter angegeben\n`-frames <Charakter>: <Move>`");
 			return;
 		}
 		if (!a.args[1]) {
-			a.message.channel.send("Der Name des Moves fehlt\n`-frames <Charakter> <Move>`");
+			a.message.channel.send("Der Name des Moves fehlt\n`-frames <Charakter>: <Move>`");
 			return;
 		}
+		if (!a.args.join(" ").includes(":")) {
+		  a.message.channel.send("`-frames <Charakter>: <Move | list>`")
+		}
+		let [character, movename] = a.args.join(" ").split(":").map(x => x.trim())
 
-		const characters = ["Banjo & Kazooie","Bayonetta","Bowser","Bowser Jr","Byleth","Captain Falcon","Chrom","Cloud","Corrin","Daisy","Dark Pit","Dark Samus","Diddy Kong","Donkey Kong","Dr Mario","Duck Hunt","Falco","Fox","Ganondorf","Greninja","Hero","Ice Climbers","Ike","Incineroar","Inkling","Isabelle","Jigglypuff","Joker","Ken","King Dedede","King K Rool","Kirby","Link","Little Mac","Lucario","Lucas","Lucina","Luigi","Mario","Marth","Mega Man","Meta Knight","Mewtwo","Mii Brawler","Mii Gunner","Mii Swordfighter","Mr Game & Watch","Ness","Olimar","Pac Man","Palutena","Peach","Pichu","Pikachu","Piranha Plant","Pit","Pt Squirtle","Pt Ivysaur","Pt Charizard","Richter","Ridley","Rob","Robin","Rosalina & Luma","Roy","Ryu","Samus","Sheik","Shulk","Simon","Snake","Sonic","Terry","Toon Link","Villager","Wario","Wii Fit Trainer","Wolf","Yoshi","Young Link","Zelda","Zero Suit Samus"];
+		const characters = ["Banjo & Kazooie","Bayonetta","Bowser","Bowser Jr","Byleth","Captain Falcon","Chrom","Cloud","Corrin","Daisy","Dark Pit","Dark Samus","Diddy Kong","Donkey Kong","Dr Mario","Duck Hunt","Falco","Fox","Ganondorf","Greninja","Hero","Ice Climbers","Ike","Incineroar","Inkling","Isabelle","Jigglypuff","Joker","Ken","King Dedede","King K Rool","Kirby","Link","Little Mac","Lucario","Lucas","Lucina","Luigi","Mario","Marth","Mega Man","Meta Knight","Mewtwo","Mii Brawler","Mii Gunner","Mii Swordfighter","Mr Game & Watch","Ness","Olimar","Pac Man","Palutena","Peach","Pichu","Pikachu","Piranha Plant","Pit","Pt Squirtle","Pt Ivysaur","Pt Charizard","Richter","Ridley","Rob","Robin","Rosalina & Luma","Roy","Ryu","Samus","Sheik","Shulk","Simon","Snake","Sonic","Terry","Toon Link","Villager","Wario","Wii Fit Trainer","Wolf","Yoshi","Young Link","Zelda","Zero Suit Samus", "Min Min"];
 		const autocorrect = require("autocorrect")({words: characters});
 
-		var name = autocorrect(a.args[0]);
+		var name = autocorrect(character);
 		var urlName = "/"+name.toLowerCase().replace("&", "and").replace(/ /g, "_")+".php";
 		var url = "https://ultimateframedata.com"+urlName;
 
@@ -40,7 +44,7 @@ module.exports = {
 					return el;
 				})
 
-				if (a.args[1] == "list") {
+				if (movename == "list") {
 					a.message.channel.send("```"+movelist.join(", ")+"```");
 					return;
 				}
@@ -52,7 +56,7 @@ module.exports = {
 					argmove += " "+a.args[i];
 					argmove = argmove.trim();
 				}
-				argmove = auto2(argmove);
+				argmove = auto2(movename);
 
 				// Get the index of the correct movecontainer class
 				var index = "";
@@ -65,7 +69,6 @@ module.exports = {
 						}
 					});
 				});
-				console.log(i);
 
 				var gif = "https://ultimateframedata.com/"+$($(".movecontainer").get(index)).children(".hitbox").children().attr("data-featherlight");
 				const embed = new Discord.MessageEmbed()
@@ -82,17 +85,16 @@ module.exports = {
 
 					msg.awaitReactions(filter, { max: 1, time: 20000, errors: ['time'] })
 						.then(collected => {
-							var data = $($(".movecontainer").get(index)).text();
-							data = data.replace(/\t/g, "").split("\n").filter(el => el.length).filter(el => !el.includes("Charge"))
-              if (data[0] === "Ground" || data[0] === "Air") data.shift();
-              if (data[0] === "Ground" || data[0] === "Air") data.shift();
+              let data = $($(".movecontainer").get(index)).children();
+              
+              let framedata = [];
+              data.each((i, el) => {
+                framedata.push([el.attribs.class, el.children[0].data])
+              })
 
-							var classes = [];
-							$($(".movecontainer").get(index)).children().each((i, el) => {
-								classes.push($(el).attr("class"));
-							});
-
-							if (!data[0].startsWith("*")) classes.shift();
+              framedata.forEach(x => {
+                x[1] = x[1].replace(/\t/g, "").replace(/\n/g, "");
+              });
             
 							const embed2 = new Discord.MessageEmbed()
 							.setColor(0xA1FFFF)
@@ -100,9 +102,11 @@ module.exports = {
               .setURL(url)
 
 							var text = "```\n";
-							for (const col in data) {
-								text += classes[col]+": "+data[col]+"\n";
-							}
+              framedata.forEach(x => {
+                if (x[1]) {
+                  text += x[0]+": "+x[1]+"\n"
+                }
+              })
 							text += "```";
 
 							embed2.addField("Frame Data", text);
@@ -115,7 +119,8 @@ module.exports = {
 	info: {
 		name: "frames",
 		description: "Zeigt die Framedata von Moves an",
-		usage: "<Charakter> <Move | list>",
-		alias: undefined
+		usage: "<Charakter>: <Move | list>",
+		alias: undefined,
+    category: "smash"
 	}
 };

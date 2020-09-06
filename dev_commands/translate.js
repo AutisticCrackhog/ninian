@@ -19,6 +19,10 @@ module.exports = {
     // Außerdem wird dieser Code eh von der kostenlosen Google Translate API geblockt weil Spam undso, also ja... Egal.
     
     // Gescheitertes Experiment I guess
+
+    // Paar Monate später: Was zur Hölle habe ich da getan? Ich habe async/await benutzt, aber dachte mir trotzdem so, 
+    // joa ein .then() kann ja nicht schaden
+    // Ich will das hier behalten damit ich sehe wie dumm ich war
     
     rp(url+"sl="+lang1+"&tl="+langA[0]+"&dt=t&q="+msg)
     .then(async res => {

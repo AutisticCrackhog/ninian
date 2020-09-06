@@ -8,6 +8,7 @@ module.exports = {
 	info: {
 		name: "ninian",
 		description: "Ninians wahre Form",
-		alias: undefined
+		alias: undefined,
+    category: "ninian"
 	}
 };

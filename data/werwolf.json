@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Unbalanced",
+    "beschreibung": "Beinhaltet alle Rollen, die es gibt. Könnte sehr schnell sehr unbalanced werden",
+    "rollen": [
+      "Amor","Prinz","Jäger","Doppelgänger","Dieb","Geist","Unruhestifter","Seher","Seher Lehrling","Aura Seherin","Bürgermeister","Disable","Hexe","Märtyrer","Leibwächter","Informant","Harter Bursche","Alkoholiker","Alte Vettel","Verfluchter","Lykanthrophin","Günstling","Weißer Werwolf ","Zaubermeisterin", "Vampir"
+    ]
+  }
+]

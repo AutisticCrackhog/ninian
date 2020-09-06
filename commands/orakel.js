@@ -134,6 +134,7 @@ module.exports = {
 		name: "orakel",
 		description: "Sieht deine Zukunft vorraus und beantwortet dir jede Frage",
 		usage: "<Frage>",
-		alias: undefined
+		alias: undefined,
+    category: "divers"
 	}
 };

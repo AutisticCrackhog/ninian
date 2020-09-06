@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+  background-color: #36393f;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  font-family: open sans;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#servers {
+  float: left;
+  width: 5%;
+  background: #202225;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 0.4em;
+}
+
+#channels {
+  float: left;
+  width: 18%;
+  background: #2f3136;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 0.4em;
+}
+
+#messages {
+  float: left;
+  width: 59%;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 0.4em;
+}
+
+#input {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0.4em;
+  position: absolute;
+  bottom: 0;
+}
+
+.serverIcon {
+  width: 100%;
+  border-radius: 100%;
+}
+
+.channelName {
+  color: #eeeeee;
+  margin-left: 1rem;
+}
+
+.category {
+  color: #999999;
+}
+
+.message {
+  color: #dddddd;
+  margin-left: 2rem;
+  font-size: 15px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: #21252b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444444;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8ac4c4;
+}

@@ -34,6 +34,7 @@ module.exports = {
 	info: {
 		name: "kneemotes",
 		description: "Schau es dir einfach selbst an",
-		alias: undefined
+		alias: undefined,
+    category: "smash"
 	}
 };

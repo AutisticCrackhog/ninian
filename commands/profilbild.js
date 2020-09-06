@@ -22,6 +22,7 @@ module.exports = {
 	info: {
 		name: "profilbild",
 		description: "Informationen zum coolen Profilbild von Ninian",
-		alias: undefined
+		alias: undefined,
+    category: "ninian"
 	}
 };

@@ -1,0 +1,82 @@
+{
+  "first": {
+    "ranked": {
+      "stage_a": {
+        "name": "New Albacore Hotel",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/98a7d7a4009fae9fb7479554535425a5a604e88e.png"
+      },
+      "stage_b": {
+        "name": "Humpback Pump Track",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/fc23fedca2dfbbd8707a14606d719a4004403d13.png"
+      },
+      "mode": "Clam Blitz"
+    },
+    "league": {
+      "stage_a": {
+        "name": "Snapper Canal",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/8c95053b3043e163cbfaaf1ec1e5f3eb770e5e07.png"
+      },
+      "stage_b": {
+        "name": "Port Mackerel",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/0907fc7dc325836a94d385919fe01dc13848612a.png"
+      },
+      "mode": "Splat zones"
+    },
+    "regular": {
+      "stage_a": {
+        "name": "Goby Arena",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/8cab733d543efc9dd561bfcc9edac52594e62522.png"
+      },
+      "stage_b": {
+        "name": "Starfish Mainstage",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/187987856bf575c4155d021cb511034931d06d24.png"
+      },
+      "mode": "Regular Battle"
+    },
+    "starts_at": 1595707200,
+    "ends_at": 1595714400
+  },
+  "next": {
+    "ranked": {
+      "stage_a": {
+        "name": "Goby Arena",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/8cab733d543efc9dd561bfcc9edac52594e62522.png"
+      },
+      "stage_b": {
+        "name": "Musselforge Fitness",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/83acec875a5bb19418d7b87d5df4ba1e38ceac66.png"
+      },
+      "mode": "Rainmaker"
+    },
+    "league": {
+      "stage_a": {
+        "name": "Welleye Warehouse",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/65c99da154295109d6fe067005f194f681762f8c.png"
+      },
+      "stage_b": {
+        "name": "New Albacore Hotel",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/98a7d7a4009fae9fb7479554535425a5a604e88e.png"
+      },
+      "mode": "Clam Blitz"
+    },
+    "regular": {
+      "stage_a": {
+        "name": "Wahoo World",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/555c356487ac3edb0088c416e8045576c6b37fcc.png"
+      },
+      "stage_b": {
+        "name": "The Reef",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/98baf21c0366ce6e03299e2326fe6d27a7582dce.png"
+      },
+      "mode": "Regular Battle"
+    },
+    "starts_at": 1595714400,
+    "ends_at": 1595721600
+  },
+  "updatedAt": [
+    2020,
+    6,
+    25,
+    22
+  ]
+}

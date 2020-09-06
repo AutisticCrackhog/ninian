@@ -30,6 +30,7 @@ module.exports = {
 	info: {
 		name: "dance",
 		description: "Lässt Ninian für dich tanzen",
-		alias: undefined
+		alias: undefined,
+    category: "ninian"
 	}
 };

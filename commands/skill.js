@@ -56,6 +56,7 @@ module.exports = {
 	info: {
 		name: "skill",
 		description: "Berechnet deinen Skill-Level",
-		alias: undefined
+		alias: undefined,
+    category: "daily"
 	}
 };

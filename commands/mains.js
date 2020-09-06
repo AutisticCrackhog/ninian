@@ -325,6 +325,7 @@ module.exports = {
 		name: "mains",
 		description: "Zeigt die Mains und Secondaries von Nutzern an und legt eigene Mains fest",
 		usage: "[list / @Nutzer / Leer] / <add / remove> <main / secondary> <Charaktername aus -mains list> ",
-		alias: ["m"]
+		alias: ["m"],
+    category: "smash"
 	}
 };

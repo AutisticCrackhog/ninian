@@ -22,6 +22,7 @@ module.exports = {
 	info: {
 		name: "flip",
 		description: "Kopf oder Schwert",
-		alias: undefined
+		alias: undefined,
+    category: "divers"
 	}
 };

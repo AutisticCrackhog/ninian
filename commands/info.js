@@ -17,11 +17,19 @@ module.exports = {
       roles: [],
       icon: a.message.guild.iconURL()
     };
+
+    if (data.color == "#000000") {
+      data.color = "#fefefe";
+    }
     
     a.message.member.roles.cache.forEach((role, key) => {
       data.roles.push(role.name)
     });
     data.roles.pop()
+    
+    if (data.roles.length == 0) {
+      data.roles.push("--");
+    }
     
     // if (data.icon === null) data.icon = "http://127.0.0.1";
     
@@ -46,6 +54,7 @@ module.exports = {
 		name: "info",
 		description: "Zeigt Info eines Nutzers an",
 		alias: undefined,
-    usage: "[@Nutzer]"
+    usage: "[@Nutzer]",
+    category: "divers"
 	}
 };

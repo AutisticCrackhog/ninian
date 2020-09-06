@@ -1,11 +1,13 @@
 module.exports = {
-	execute(a) {
+	execute({client, message, args}) {
 
 	},
 
 	info: {
 		name: "",
 		description: "",
-		alias: undefined
+		alias: undefined,
+    usage: "",
+    category: ""
 	}
 };

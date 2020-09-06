@@ -21,6 +21,7 @@ module.exports = {
 	info: {
 		name: "inspiro",
 		description: "Zeigt dir eine von InspiroBots unendlichen Weisheiten",
-		alias: undefined
+		alias: undefined,
+    category: "divers"
 	}
 };

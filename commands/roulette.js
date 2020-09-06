@@ -35,7 +35,7 @@ module.exports = {
         
         var running = true;
         var game = () => {
-          if (round % 2 == 0 && bullets < 5) {
+          if (round % 2 == 0 && bullets < 5 && turn == 0) {
             bullets++;
             if (bullets != 1) a.message.channel.send("Eine weitere Patrone wurde hinzugefügt");
           }
@@ -48,12 +48,14 @@ module.exports = {
                 return;
               } else {
                 msg2.edit(players[turn].username+" hat **überlebt**");
-                turn == players.length -1 ? turn = 0 : turn++;
                 if (turn == players.length - 1) {
                   turn = 0;
                   round++;
+                } else {
+                  turn++
                 }
               }
+              console.log(turn);
             }
             setTimeout(check, time);
             setTimeout(restart, time);
@@ -73,6 +75,7 @@ module.exports = {
 	info: {
 		name: "roulette",
 		description: "Spiele eine Runde Russisches Roulette",
-		alias: undefined
+		alias: undefined,
+    category: "spiele"
 	}
 };
