@@ -23,7 +23,7 @@
     "fluent-ffmpeg": "^2.1.2",
     "image-downloader": "^4.0.1",
     "moment-timezone": "^0.5.31",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
     "seedrandom": "^3.0.5",
