@@ -2,14 +2,14 @@
   "first": {
     "ranked": {
       "stage_a": {
-        "name": "New Albacore Hotel",
-        "image": "https://splatoon2.ink/assets/splatnet/images/stage/98a7d7a4009fae9fb7479554535425a5a604e88e.png"
+        "name": "Goby Arena",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/8cab733d543efc9dd561bfcc9edac52594e62522.png"
       },
       "stage_b": {
-        "name": "Humpback Pump Track",
-        "image": "https://splatoon2.ink/assets/splatnet/images/stage/fc23fedca2dfbbd8707a14606d719a4004403d13.png"
+        "name": "Piranha Pit",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/828e49a8414a4bbc0a5da3e61454ab148a9f4063.png"
       },
-      "mode": "Clam Blitz"
+      "mode": "Tower control"
     },
     "league": {
       "stage_a": {
@@ -24,59 +24,57 @@
     },
     "regular": {
       "stage_a": {
-        "name": "Goby Arena",
-        "image": "https://splatoon2.ink/assets/splatnet/images/stage/8cab733d543efc9dd561bfcc9edac52594e62522.png"
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/5c030a505ee57c889d3e5268a4b10c1f1f37880a.png"
+      },
+      "stage_b": {
+        "name": "Sturgeon Shipyard",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/bc794e337900afd763f8a88359f83df5679ddf12.png"
+      },
+      "mode": "Regular Battle"
+    },
+    "starts_at": 1601481600,
+    "ends_at": 1601488800
+  },
+  "next": {
+    "ranked": {
+      "stage_a": {
+        "name": "Kelp Dome",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/a12e4bf9f871677a5f3735d421317fbbf09e1a78.png"
       },
       "stage_b": {
         "name": "Starfish Mainstage",
         "image": "https://splatoon2.ink/assets/splatnet/images/stage/187987856bf575c4155d021cb511034931d06d24.png"
       },
-      "mode": "Regular Battle"
-    },
-    "starts_at": 1595707200,
-    "ends_at": 1595714400
-  },
-  "next": {
-    "ranked": {
-      "stage_a": {
-        "name": "Goby Arena",
-        "image": "https://splatoon2.ink/assets/splatnet/images/stage/8cab733d543efc9dd561bfcc9edac52594e62522.png"
-      },
-      "stage_b": {
-        "name": "Musselforge Fitness",
-        "image": "https://splatoon2.ink/assets/splatnet/images/stage/83acec875a5bb19418d7b87d5df4ba1e38ceac66.png"
-      },
-      "mode": "Rainmaker"
+      "mode": "Splat zones"
     },
     "league": {
       "stage_a": {
-        "name": "Welleye Warehouse",
-        "image": "https://splatoon2.ink/assets/splatnet/images/stage/65c99da154295109d6fe067005f194f681762f8c.png"
+        "name": "Musselforge Fitness",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/83acec875a5bb19418d7b87d5df4ba1e38ceac66.png"
       },
       "stage_b": {
-        "name": "New Albacore Hotel",
-        "image": "https://splatoon2.ink/assets/splatnet/images/stage/98a7d7a4009fae9fb7479554535425a5a604e88e.png"
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/5c030a505ee57c889d3e5268a4b10c1f1f37880a.png"
       },
       "mode": "Clam Blitz"
     },
     "regular": {
       "stage_a": {
+        "name": "MakoMart",
+        "image": "https://splatoon2.ink/assets/splatnet/images/stage/d9f0f6c330aaa3b975e572637b00c4c0b6b89f7d.png"
+      },
+      "stage_b": {
         "name": "Wahoo World",
         "image": "https://splatoon2.ink/assets/splatnet/images/stage/555c356487ac3edb0088c416e8045576c6b37fcc.png"
       },
-      "stage_b": {
-        "name": "The Reef",
-        "image": "https://splatoon2.ink/assets/splatnet/images/stage/98baf21c0366ce6e03299e2326fe6d27a7582dce.png"
-      },
       "mode": "Regular Battle"
     },
-    "starts_at": 1595714400,
-    "ends_at": 1595721600
+    "starts_at": 1601488800,
+    "ends_at": 1601496000
   },
   "updatedAt": [
     2020,
-    6,
-    25,
-    22
+    8,
+    30,
+    18
   ]
 }

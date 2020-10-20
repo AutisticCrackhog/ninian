@@ -1,0 +1,538 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+html {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#layer {
+  width: 100%;
+  height: 100%;
+  background-color: #7a98ce;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.headlines {
+  margin: 15vh 0 3vh 0;
+  width: 100%;
+  align-items: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.headlines h3 {
+  font-size: 16vw;
+  margin-bottom: 1vh;
+  font-family: "Spinnaker", sans-serif;
+  text-shadow: 2px 2px black;
+}
+
+.headlines h4 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 4.8vw;
+  font-weight: 400;
+}
+
+.invite {
+  margin-top: 5vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.invite h4 {
+  margin-bottom: 1vh;
+  font-size: 5vw;
+  font-family: "Comfortaa", cursive;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buttons button {
+  position: relative;
+  padding: 10px;
+  width: 45vw;
+  height: 10vw;
+  background-color: white;
+  border: 0.5vh solid #1385f0;
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5vw;
+  color: #1385f0;
+  letter-spacing: 0.5vw;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+  transition: color 0.2s;
+  z-index: 6;
+}
+
+.buttons button:hover {
+  color: white;
+  background-color: #1385f0;
+  cursor: pointer;
+}
+
+.buttons #tanzen {
+  width: 25vw;
+}
+
+.shape {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+}
+
+#shape1 {
+  z-index: -4;
+}
+
+#ninian {
+  display: block;
+  width: 135%;
+  position: absolute;
+  z-index: -3;
+  bottom: 0vh;
+  left: -35vw;
+}
+
+.sparkles {
+  width: 100%;
+}
+
+#spark1 {
+  width: 12vw;
+  position: absolute;
+  top: 15vh;
+  right: 2vw;
+  animation: sparkle 1s;
+  animation-iteration-count: infinite;
+}
+
+#spark2 {
+  width: 15vw;
+  position: absolute;
+  top: 12vh;
+  left: 2vw;
+  animation: sparkle 1.3s;
+  animation-iteration-count: infinite;
+}
+
+#spark3 {
+  width: 7vw;
+  position: absolute;
+  top: 12vh;
+  left: 14vw;
+  animation: sparkle2 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes sparkle2 {
+  0% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.slideButtonAnimation {
+  animation: rotate 0.45s ease-out;
+}
+
+#slidebarbutton {
+  width: 15vw;
+  position: absolute;
+  right: 2vw;
+  top: 2vh;
+  border-radius: 100%;
+  z-index: 10;
+}
+
+#slidebar {
+  height: 100%;
+  width: 55%;
+  position: absolute;
+  top: 0;
+  z-index: 7;
+  overflow: hidden;
+}
+
+#slidebar img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.linkbox {
+  position: absolute;
+  min-height: 60vh;
+  height: calc(140vh - 110vw);
+  top: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150%;
+  height: calc((140vh - 110vw) / 4);
+  transform: rotate(8deg);
+}
+
+.link.blue {
+  background: rgb(49, 148, 241);
+}
+
+.link.lightblue {
+  background: rgb(132, 193, 250);
+}
+
+.link.invisible {
+  visibility: hidden;
+  height: 15vh;
+}
+
+.link a {
+  transform: rotate(-8deg);
+  flex: 0.6;
+  z-index: 20;
+  text-decoration: none;
+  font-size: 5vw;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  width: 80%;
+  height: 7vw;
+  text-align: center;
+  letter-spacing: 0.8vw;
+}
+
+.link.blue a,
+.link.lightblue a {
+  color: white;
+}
+
+.link.white a {
+  color: rgb(63, 180, 241);
+}
+
+.slidebarOff {
+  animation: slideOut 0.5s;
+  right: -60%;
+}
+
+.slidebarOn {
+  animation: slideIn 0.5s;
+  right: 0;
+  display: block;
+}
+
+#dragonstone {
+  width: 50vw;
+  position: absolute;
+  z-index: 10;
+  bottom: -15vh;
+  pointer-events: none;
+}
+
+.dragonstone {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.dragonstoneInvisible {
+  animation: rollOut 0.7s;
+  right: -100%;
+  transform: rotate(0deg);
+}
+
+.dragonstoneVisible {
+  right: 5%;
+  animation: rollIn 1s ease;
+  transform: rotate(-50deg);
+}
+
+#spark4 {
+  position: absolute;
+  right: 40vw;
+  bottom: 8vh;
+  z-index: 10;
+  width: 11vw;
+}
+
+#spark5 {
+  position: absolute;
+  right: 50vw;
+  bottom: 12vh;
+  z-index: 10;
+  width: 16vw;
+}
+
+.dragonsparkVisible {
+  animation: sparkIn 1.3s ease;
+  opacity: 1;
+  animation-iteration-count: 1;
+}
+
+.dragonsparkInvisible {
+  animation: sparkOut 1s ease;
+  opacity: 0;
+  animation-iteration-count: 1;
+}
+
+@keyframes slideIn {
+  0% {
+    right: -60%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -60%;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  75% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rollIn {
+  0% {
+    transform: rotate(0deg);
+    right: -40%;
+  }
+  10% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-50deg);
+    right: 5%;
+  }
+}
+
+@keyframes rollOut {
+  0% {
+    transform: rotate(-50deg);
+    right: 5%;
+  }
+  100% {
+    transform: rotate(0deg);
+    right: -100%;
+  }
+}
+
+@keyframes sparkIn {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes sparkOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.desktoponly {
+  display: none;
+}
+
+@media only screen and (min-width: 768px),
+  only screen and (orientation: landscape) {
+  .shape {
+    /* display: none; */
+  }
+
+  html {
+    overflow-y: auto;
+  }
+
+  body {
+    overflow-y: auto;
+    position: static;
+  }
+
+  .headlines {
+    width: 100%;
+    margin: 28vh 0 3vh 0;
+  }
+
+  .headlines h3 {
+    font-size: 12vh;
+  }
+
+  .headlines h4 {
+    font-size: 5vh;
+  }
+
+  .invite {
+    margin-top: 10vh;
+  }
+
+  .invite h4 {
+    font-size: 4.5vh;
+    margin-bottom: 3vh;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .buttons button {
+    width: 45vh;
+    height: 7vh;
+    font-size: 2vh;
+    letter-spacing: 0.5vh;
+    margin: 0 3vh;
+    z-index: 6;
+    flex: 0.3;
+  }
+
+  .buttons button:hover {
+    color: white;
+    background-color: #1385f0;
+  }
+
+  #ninian {
+    width: 100vh;
+    bottom: -7vh;
+    left: -15vh;
+  }
+
+  .shape {
+    display: initial;
+    height: 100vh;
+  }
+
+  .desktoponly {
+    position: absolute;
+    display: block;
+    background-color: rgb(50, 148, 241);
+    height: 80%;
+    width: 100%;
+    bottom: -80%;
+  }
+
+  #slidebarbutton {
+    display: none;
+  }
+
+  #slidebarbutton,
+  #slidebar,
+  #spark4,
+  #spark5,
+  #dragonstone {
+    display: none;
+  }
+
+  #spark1 {
+    width: 12vh;
+  }
+
+  #spark2 {
+    width: 15vh;
+  }
+
+  #spark3 {
+    width: 7vh;
+  }
+
+  #dragonstone {
+    width: 40vh;
+    bottom: 0vh;
+  }
+
+  .dragonstone {
+    bottom: -80vh;
+  }
+
+  .desktoponly ul {
+    position: absolute;
+    list-style: none;
+    font-size: 4vh;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    top: 10vh;
+    font-family: "Montserrat", sans-serif;
+  }
+}

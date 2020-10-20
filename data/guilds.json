@@ -41,5 +41,13 @@
     "owner": "Turtellok",
     "ownerDiscrim": "0162",
     "date": "function getFullYear() { [native code] } function getMonth() { [native code] } 25"
+  },
+  {
+    "name": "Server von Miki",
+    "id": "723863393592934430",
+    "ownerid": "269963628659212298",
+    "owner": "Miki",
+    "ownerDiscrim": "7777",
+    "date": "2020 8 15"
   }
 ]

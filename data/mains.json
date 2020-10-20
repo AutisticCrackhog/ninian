@@ -54,6 +54,9 @@
     "Snake",
     "Ike",
     "Pokémon Trainer",
+    "Squirtle",
+    "Ivysaur",
+    "Charizard",
     "Diddy Kong",
     "Lucas",
     "Sonic",
@@ -97,7 +100,8 @@
     "Banjo & Kazooie",
     "Terry",
     "Byleth",
-    "Min Min"
+    "Min Min",
+    "Steve"
   ],
   "247271545234259968": {
     "mains": [
@@ -232,6 +236,14 @@
   "440503830006857729": {
     "mains": [
       "Pokémon Trainer"
+    ],
+    "secondaries": []
+  },
+  "494978861625245696": {
+    "mains": [
+      "Greninja",
+      "Pichu",
+      "Ivysaur"
     ],
     "secondaries": []
   }

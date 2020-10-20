@@ -7,7 +7,7 @@ module.exports = {
       user = message.mentions.users.first();
     }
 
-    message.channel.send(user.displayAvatarURL())
+    message.channel.send(user.displayAvatarURL({size: 1024, format: "png"}))
     .catch(e => {
       message.channel.send("Kein Profilbild gefunden");
     })

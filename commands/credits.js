@@ -3,6 +3,7 @@ const Discord = require("discord.js")
 module.exports = {
 	execute(a) { with(a) {
     let dense = client.users.cache.get("338075478118236160");
+    let zaib = client.users.cache.get("232593220427710464");
 
 
     const embed = new Discord.MessageEmbed()
@@ -11,6 +12,9 @@ module.exports = {
     .addField("Kunst", 
       "**Profilbild** \n@"+dense.tag + "\n"
       + "**Emote: <:ninian:695011975390036079>** \n@"+dense.tag
+    )
+    .addField("Ideen", 
+      zaib.tag
     )
     .addField("Daten und APIs", 
       "**-ascii** \nartii.herokuapp.com API \n"

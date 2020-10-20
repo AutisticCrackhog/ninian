@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>Ninian</title>
+    <script src="/new/hammer.js"></script>
+    <script src="/new/script.js"></script>
+    <link rel="stylesheet" href="/new/style.css" />
+    <link rel="icon" href="/new/favicon.png" />
+
+    <meta content="Lade Ninian in deinen Server ein!" property="og:description">
+    <meta name="theme-color" content="#a1ffff">
+    <meta property="og:image" content="https://cdn.discordapp.com/avatars/513436746080452641/dadefd374cb78b330697a14edb690d24.png?size=1024">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spinnaker&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body onload="setup();">
+    <div id="layer"></div>
+    <div class="headlines">
+      <h3>NinianBot</h3>
+      <h4>Discord Bot von @AutisticCrackhog#3414</h4>
+    </div>
+    <div class="invite">
+      <h4>Lade Ninian in deinen Server ein</h4>
+      <div class="buttons">
+        <button onclick="window.location.href = 'https://discord.com/api/oauth2/authorize?client_id=513436746080452641&permissions=607505473&scope=bot';"  id="einladen">Zu Discord einladen</button>
+        <form action="/dance">
+          <button id="tanzen">Tanzen</button>
+        </form>
+      </div>
+      <img class="shape" id="shape1" src="/new/shape1.png" />
+      <img src="/new/shape2.png" class="shape" id="shape2" />
+      <img src="/new/NinianCell.png" id="ninian" />
+    </div>
+    <img src="/new/dragonstone.png" id="slidebarbutton" />
+    <div class="slidebar"></div>
+
+    <div class="sparkles">
+      <img class="spark" src="/new/spark.png" id="spark1" />
+      <img class="spark" src="/new/spark.png" id="spark2" />
+      <img class="spark" src="/new/spark.png" id="spark3" />
+    </div>
+
+    <div class="slidebarOff" id="slidebar">
+      <img src="/new/slidebar.png" />
+      <div class="linkbox">
+        <div class="link white">
+          <a href="#"> Befehle </a>
+        </div>
+        <div class="link blue">
+          <a href="#"> Demo </a>
+        </div>
+        <div class="link white">
+          <a href="#"> Discord </a>
+        </div>
+        <div class="link lightblue">
+          <a href="#"> Mitwirker </a>
+        </div>
+        <div class="link invisible">
+          <a href="#"> Invisible! </a>
+        </div>
+      </div>
+    </div>
+    <div class="dragonstone">
+      <img
+        src="/new/dragonstonelarge.png"
+        class="dragonstoneInvisible"
+        id="dragonstone"
+      />
+    </div>
+    <img class="dragonsparkInvisible" src="/new/spark.png" id="spark4" />
+    <img class="dragonsparkInvisible" src="/new/spark.png" id="spark5" />
+
+    <div class="desktoponly">
+      <!-- <ul>
+        <li>Befehle</li>
+        <li>Demo</li>
+        <li>Discord</li>
+        <li>Mitwirker</li>
+      </ul> -->
+    </div>
+  </body>
+</html>

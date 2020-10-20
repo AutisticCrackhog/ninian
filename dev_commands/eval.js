@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const rp = require("request-promise");
 const cheerio = require("cheerio");
+const DB = require("../db.js");
 
 module.exports = {
 	async execute(a) { with(a) {

@@ -27,9 +27,13 @@ const app = express();
 
 app.use(express.static("public"));
 
-app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/site/index.html");
-});
+// app.get("/", (request, response) => {
+//   response.sendFile(__dirname + "/site/index.html");
+// });
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/site/new.html");
+})
 
 app.get("/dance", (request, response) => {
   response.sendFile(__dirname + "/site/dance.html");
